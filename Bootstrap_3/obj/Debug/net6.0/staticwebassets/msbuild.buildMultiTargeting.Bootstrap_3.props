@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Bootstrap_3.props" />
+</Project>

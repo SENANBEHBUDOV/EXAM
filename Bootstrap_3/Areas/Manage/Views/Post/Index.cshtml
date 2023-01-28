@@ -1,0 +1,38 @@
+﻿@using BootStrap.Models;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Project>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in (Model ?? new List<Project>()))
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td> <img width="40" src="~/assets/img/@item.ImageUrl" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Author</td>
+                    <td><a type="button" class="btn btn-dark" asp-area="Manage" asp-controller="Post" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                    <td><a type="button" class="btn btn-success" asp-area="Manage" asp-controller="Post" asp-action="Update" asp-route-id="@item.Id">Update</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
